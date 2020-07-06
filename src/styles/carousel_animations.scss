@@ -1,0 +1,102 @@
+/**
+ * translate x-axis to left 
+ */
+.to-left-initial {
+	display: block !important;
+	transform: translateX(100vw) !important;
+	z-index: 2000 !important;
+}
+
+.to-left-enter {
+	display: block !important;
+	transform: translateX(0) !important;
+	z-index: 2000 !important;
+}
+
+.to-left-exit {
+	display: block !important;
+	transform: translateX(-100vw) !important;
+	z-index: 2000 !important;
+}
+
+.to-left {
+	display: none;
+	transition: transform var(--duration, 1s) var(--easing, ease-in-out);
+	z-index: 1000;
+}
+
+/**
+ * translate x-axis to right 
+ */
+.to-right-initial {
+	display: block !important;
+	transform: translateX(-100vw) !important;
+	z-index: 2000 !important;
+}
+
+.to-right-enter {
+	display: block !important;
+	transform: translateX(0) !important;
+	z-index: 2000 !important;
+}
+
+.to-right-exit {
+	display: block !important;
+	transform: translateX(100vw) !important;
+	z-index: 2000 !important;
+}
+
+.to-right {
+	display: none;
+	transition: transform var(--duration, 1s) var(--easing, ease-in-out);
+	z-index: 1000;
+}
+
+/**
+ * changing opacity
+ */
+.fade-initial {
+	opacity: 0 !important;
+}
+
+.fade-enter {
+	opacity: 1 !important;
+	z-index: 2000 !important;
+}
+
+.fade-exit {
+	opacity: 0 !important;
+	z-index: 2000 !important;
+}
+
+.fade {
+	opacity: 0;
+	transition: opacity var(--duration, 1s) var(--easing, ease-in-out);
+	z-index: 1000;
+}
+
+/**
+ * changing opacity with scale
+ */
+.fade-scale-initial {
+	opacity: 0 !important;
+	transform: scale(1.1);
+}
+
+.fade-scale-enter {
+	opacity: 1 !important;
+	transform: scale(1);
+}
+
+.fade-scale-exit {
+	opacity: 0 !important;
+	transform: scale(1.1);
+}
+
+.fade-scale {
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-duration: var(--duration, 1s);
+	transition-timing-function: var(--easing, ease-in-out);
+	z-index: 1000;
+}

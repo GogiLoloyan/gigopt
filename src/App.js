@@ -1,24 +1,37 @@
-import React from 'react'
+import React from 'react';
 
-import Header from './components/Header'
-import MainHeader from './components/MainHeader'
-import About from './components/About'
-import Testimonials from './components/Testimonials'
-import Slider from './components/Slider'
-import Footer from './components/Footer'
-import './App.css'
+import Menu from './components/Menu';
+import About from './components/About';
+import Header from './components/Header';
+import Slider from './components/Slider';
+import Footer from './components/Footer';
+import Testimonials from './components/Testimonials';
+import HeaderCarousel from './components/HeaderCarousel';
 
-function App() {
-	return (
-		<div className='main'>
+import Layout from './Layout';
+
+import { theme } from './theme';
+import { ThemeProvider } from 'styled-components';
+
+import './App.scss';
+
+
+/**
+ * App component
+ * @returns {React.Node} - App component
+ */
+const App = () => (
+	<ThemeProvider theme={theme}>
+		<Layout>
 			<Header />
-			<MainHeader />
+			<HeaderCarousel />
+			<Menu />
 			<About />
 			<Testimonials />
 			<Slider />
 			<Footer />
-		</div>
-	)
-}
+		</Layout>
+	</ThemeProvider>
+);
 
-export default App
+export default App;

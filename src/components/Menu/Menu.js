@@ -1,40 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { imgs } from '../imgs/header_imgs'
-import { menuData } from '../icons/menu'
-import { useSlide } from '../hooks/slide.hook'
+import React from 'react'
+import { menuData } from '../../icons/menu'
 
-function MainHeader() {
-	const refImgs = []
-	const [index, setIndex] = useState(0)
-	const { start } = useSlide(refImgs, 5000, setIndex)
-
-	useEffect(() => {
-		start()
-	}, [])
-
+const Menu = () => {
 	return (
-		<section className='main-header'>
-			<div className='slide'>
-				{imgs.map((img, i) => (
-					<img
-						key={i}
-						src={img}
-						ref={ref => refImgs.push(ref)}
-						alt='img'
-						className='slide__img'
-					/>
-				))}
-				<div className='navigation'>
-					{imgs.map((_, i) => (
-						<div
-							key={i}
-							className={`navigation__item ${index === i ? 'active' : ''}`}
-						></div>
-					))}
-				</div>
-			</div>
-
+		<nav className='site-menu'>
 			<ul className='menu'>
+
 				{menuData.map(({ icon, text, subMenu }, i) => (
 					<li key={i} className='menu__item'>
 						<img src={icon} alt='icon' className='icon' />
@@ -63,9 +34,10 @@ function MainHeader() {
 						) : null}
 					</li>
 				))}
+				
 			</ul>
-		</section>
+		</nav>
 	)
 }
 
-export default MainHeader
+export default Menu
