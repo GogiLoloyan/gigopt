@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import logo from '../../imgs/logo.png';
 import viber from '../../icons/viber.png';
@@ -26,7 +27,7 @@ import {
 const Header = () => (
 	<Grid>
 		<Logo>
-			<img src={logo} alt="logo" />
+			<motion.img initial={{scale: 1}} animate={{scale: 1.1}} src={logo} alt="logo" />
 		</Logo>
 
 		<ContactsWrapper>
